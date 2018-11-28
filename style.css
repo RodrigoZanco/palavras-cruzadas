@@ -43,10 +43,7 @@ h3{
    margin-bottom: 10px;
 }
 
-#botao{
-    margin: 10px;
-    width: 150px;
-    height: 50px;
+.botao{
 }
 
 #dica {
@@ -61,3 +58,7 @@ h3{
     font-size: 11px;
 }
 
+#rodape {
+    color: white;
+    font-size: 12px;
+}
