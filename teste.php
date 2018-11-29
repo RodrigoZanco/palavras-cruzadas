@@ -22,12 +22,12 @@
                 echo 'ERROR: ' . $e->getMessage(); //aqui pode se adicionar um script de retorno junto com o tratamento.
             }
             
-            $stmt = $conn->query("SELECT palavra FROM palavras ORDER BY rand() LIMIT 15"); //statement para consulta (query)
+            $stmt = $conn->query("SELECT id_grupo , palavra FROM palavras ORDER BY rand() LIMIT 15"); //statement para consulta (query)
             
             $a = 0;
 
             while($row = $stmt->fetch(PDO::FETCH_ASSOC)) {  //exemplo de retorno da consulta. Deve se fazer por post para implementar na pagina.
-                //echo "<tr><td>id_grupo: ".$row["id_grupo"]." | </td>";
+                echo "<tr><td>id_grupo: ".$row["id_grupo"]." | </td>";
                 echo "<td>palavra: ".$row["palavra"]."<br></td>"; 
                 echo "</tr>";
                 $a++;
@@ -51,8 +51,6 @@
 
         ?>
 
-
-
         <script>
         
             /*
@@ -74,7 +72,7 @@
 
             //Lista de palavras para gerar o jogo
             
-            var palavras = ['TALLINN','MOUNTAIN','RIGA','SMARTY','CHEESE','COW','BICYCLE','GREEN','LINUX','ZEPPELIN','GOOGLE','ESTONIA','DOG','LATVIA','HELLO'];
+            var palavras = ["TALLINN","MOUNTAIN","RIGA","SMARTY","CHEESE","COW","BICYCLE","GREEN","LINUX","ZEPPELIN","GOOGLE","ESTONIA","DOG","LATVIA","HELLO"];
 
             //Função para embaralhar a Lista de palavras
             function shuffle(array) {
